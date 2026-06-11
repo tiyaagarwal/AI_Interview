@@ -1,0 +1,7 @@
+Jane Candidate
+Software Engineer
+Skills: JavaScript, React, Node.js, MongoDB, AWS, Docker
+Projects: Built a real-time interview practice app using React, Express, MongoDB, and OpenAI APIs. Improved API latency by 35% with caching.
+Experience: Software Engineer Intern at Acme, June 2024-August 2024. Built dashboards and REST APIs.
+Education: B.S. Computer Science, Example University
+Certifications: AWS Cloud Practitioner

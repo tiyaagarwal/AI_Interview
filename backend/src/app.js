@@ -1,0 +1,24 @@
+import express from 'express';
+import morgan from 'morgan';
+import authRoutes from './routes/authRoutes.js';
+import dashboardRoutes from './routes/dashboardRoutes.js';
+import interviewRoutes from './routes/interviewRoutes.js';
+import resumeRoutes from './routes/resumeRoutes.js';
+import { apiLimiter, corsMiddleware, helmetMiddleware, sanitizeMiddleware } from './middleware/security.js';
+import { errorHandler, notFound } from './middleware/errorHandler.js';
+
+const app = express();
+app.use(helmetMiddleware);
+app.use(corsMiddleware);
+app.use(express.json({ limit: '1mb' }));
+app.use(morgan('combined'));
+app.use('/api', apiLimiter);
+app.use(sanitizeMiddleware);
+app.get('/health', (_req, res) => res.json({ status: 'ok', uptime: process.uptime() }));
+app.use('/api/auth', authRoutes);
+app.use('/api/resumes', resumeRoutes);
+app.use('/api/interviews', interviewRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+app.use(notFound);
+app.use(errorHandler);
+export default app;

@@ -1,0 +1,20 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import './index.css';
+import AppLayout from './components/layout/AppLayout';
+import ProtectedRoute from './components/layout/ProtectedRoute';
+import { AuthProvider } from './context/AuthContext';
+import AdminDashboard from './pages/AdminDashboard';
+import Dashboard from './pages/Dashboard';
+import ForgotPassword from './pages/ForgotPassword';
+import InterviewSession from './pages/InterviewSession';
+import Interviews from './pages/Interviews';
+import Login from './pages/Login';
+import NewInterview from './pages/NewInterview';
+import Profile from './pages/Profile';
+import Register from './pages/Register';
+import Report from './pages/Report';
+import Resumes from './pages/Resumes';
+
+createRoot(document.getElementById('root')).render(<StrictMode><BrowserRouter><AuthProvider><Routes><Route path="/login" element={<Login/>}/><Route path="/register" element={<Register/>}/><Route path="/forgot-password" element={<ForgotPassword/>}/><Route element={<ProtectedRoute/>}><Route element={<AppLayout/>}><Route path="/" element={<Navigate to="/dashboard"/>}/><Route path="/dashboard" element={<Dashboard/>}/><Route path="/resumes" element={<Resumes/>}/><Route path="/interviews" element={<Interviews/>}/><Route path="/interviews/new" element={<NewInterview/>}/><Route path="/interviews/:id" element={<InterviewSession/>}/><Route path="/reports/:id" element={<Report/>}/><Route path="/profile" element={<Profile/>}/></Route></Route><Route element={<ProtectedRoute adminOnly/>}><Route element={<AppLayout/>}><Route path="/admin" element={<AdminDashboard/>}/></Route></Route></Routes></AuthProvider></BrowserRouter></StrictMode>);
