@@ -1,6 +1,6 @@
-# AI Interview
+# MockMate
 
-An AI-powered interview platform with separate `backend` and `frontend` services, designed to help candidates practice interviews and/or help recruiters run AI-assisted interview sessions.
+MockMate is an AI-powered interview platform with separate `backend` and `frontend` services, designed to help candidates practice interviews and/or help recruiters run AI-assisted interview sessions.
 
 ## Features
 
@@ -12,7 +12,7 @@ An AI-powered interview platform with separate `backend` and `frontend` services
 ## Project Structure
 
 ```
-AI_Interview/
+MockMate/
 ├── backend/    # FastAPI application (API, business logic, AI integration)
 ├── frontend/   # React application (user interface)
 └── .gitignore
@@ -41,8 +41,8 @@ AI_Interview/
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/tiyaagarwal/AI_Interview.git
-   cd AI_Interview
+   git clone https://github.com/tiyaagarwal/MockMate.git
+   cd MockMate
    ```
 
 2. Set up the backend
