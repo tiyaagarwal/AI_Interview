@@ -36,7 +36,7 @@ const Navbar = ({ setAuth, auth }) => {
               color: isDarkMode ? "#e0e0e0" : "#1890ff",
             }}
           >
-            AI Mock Interview
+            MockMate
           </h1>
         </div>
 
