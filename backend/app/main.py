@@ -9,7 +9,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-app = FastAPI(title="AI Mock Interview Platform", version="1.0.0")
+app = FastAPI(title="MockMate", version="1.0.0")
 
 # CORS Middleware
 app.add_middleware(
